@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dealer List</title>
+</head>
+<body>
+    <h1>Dealer List</h1>
+    <ul>
+        {% for dealer in dealers %}
+            <li>
+                <h2>{{ dealer.dealer_location }}</h2>
+                <p>Customers:</p>
+                <ul>
+                    {% for customer in dealer.customers.all %}
+                        <li>{{ customer.name }} - {{ customer.phone_number }}</li>
+                    {% endfor %}
+
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

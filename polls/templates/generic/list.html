@@ -1,0 +1,11 @@
+<h1>Emails</h1>
+<ul>
+    {% for email in object_list %}
+        <li>
+            <a href="{% url 'polls:generic-email-detail' email.pk %}">{{ email.subject }}</a>
+            <a href="{% url 'polls:generic-email-update' email.pk %}">Edit</a>
+        </li>
+    {% empty %}
+        <li>No emails yet.</li>
+    {% endfor %}
+</ul>

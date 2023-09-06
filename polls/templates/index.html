@@ -1,0 +1,9 @@
+<!--{{que}}-->
+
+{% if que %}
+    {% for question in que %}
+<li>{{question.id}} : {{ question.question_text }}</li>
+    {% endfor %}
+{% else %}
+    <h5>No question found</h5>
+{% endif %}

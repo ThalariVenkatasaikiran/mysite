@@ -1,0 +1,7 @@
+{% if emails %}
+    {% for email in emails %}
+        <li><a href="{% url 'polls:detail-email' email.pk %}">{{ email }}</a></li>
+    {% endfor %}
+{% else %}
+    <h5>No Emails Exists </h5>
+{% endif %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load my_tags%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Interest</title>
+
+</head>
+<body>
+<h1>{{name|to_title}}</h1>
+<h1>Aadhar = {{Aadhar|to_mask}}
+<h5>Principal amount = {{principle|to_number}}</h5>
+<h5>Months = {{months}}</h5>
+<h5>Rate of interest = {{rate_of_interest}}</h5>
+<h5>Total = {{total|to_number}}</h5>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <h1>My paragraph</h1>-->
+<!--    <p1>Side heading</p1>-->
+<!--    <button>start</button>-->
+<!--    <button>end</button>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+<!--{{mydata}}-->
+{% if mydata%}
+    <h3>Accesing a dict values from keys</h3>
+    <li>{{mydata.my_list}}</li>
+    <li>{{mydata.name}}</li>
+    <li>{{mydata.my_dict}}</li>
+    <li>{{mydata.salary}}</li>
+
+    <h3>Accesing a keys,values with items()</h3>
+    {% for key,value in mydata.items %}
+    <li>{{key}}:{{value}}</li>
+    {% endfor %}
+    <h3>Salary Info</h3>
+    {% for salary in mydata.salary %}
+        {% if salary >= 150000 %}
+            <p>{{forloop.counter}}.{{ salary }}:Salary is sufficient, we can save 20k</p>
+        {% elif salary > 130000 %}
+            <p>{{forloop.counter}}.{{ salary }}:Salary can manage , we can save 10k</p>
+        {% else %}
+            <p>{{forloop.counter}}.{{ salary }}:Salary cannot manage , we need to borrow 10k</p>
+        {% endif %}
+    {% endfor %}
+{% else %}
+<p>Data Not Found</p>
+{% endif %}

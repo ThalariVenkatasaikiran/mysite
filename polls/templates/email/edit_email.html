@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    <input name="from" value="{{ email.from_email }}"></br>
+    <input name="to" value="{{ email.to_email }}"></br>
+    <input name="subject" value="{{ email.subject }}"></br>
+    <textarea name="body">{{ email.body }}</textarea></br>
+    <input type="submit" value="Update"></br>
+</form>

@@ -1,0 +1,17 @@
+{% if err %}
+    <h5>{{ err }}</h5>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+            {% if field.help_text %}
+            <p class="help" style="font-size: 5px;">{{ field.help_text|safe }}</p>
+            {% endif %}
+        </div>
+
+    {% endfor %}
+<input type="submit" value="create">
+</form>

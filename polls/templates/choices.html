@@ -1,0 +1,9 @@
+<h1>{{ question.question_text }}</h1>
+
+{% if choices %}
+   {% for choice oin choices %}
+       <li>{{ choice.choice_text }}, votes:{{choice.votes}}</li>
+   {% endfor %}
+{% else %}
+    <p> Choices not there </p>
+{% endif %}
